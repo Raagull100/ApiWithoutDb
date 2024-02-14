@@ -1,0 +1,10 @@
+import express from 'express';
+import {getmethod,postmethod,putmethod,deletemethod,patchmethod} from './requesthandler.mjs';
+const router = express.Router();
+router.use(express.json());
+export default router;
+router.get('/',getmethod);
+router.post('/',postmethod);
+router.put('/:name/:replacename',putmethod);
+router.delete('/:deletename',deletemethod);
+router.patch('/',patchmethod);
